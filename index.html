@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OC&amp;S Typing Exam</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f8fd;--bg2:#e0ecfa;--card:#ffffff;--tx:#10213a;--mu:#52627a;--ac:#14305e;--bd:#d3e0ef;--ok:#003153;--er:#c8102e;--bl:#1e6fd9;--gold:#c8102e;--s1:#0b1f44;--s2:#c8102e;--s3:#003153;--bt:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1424;--bg2:#10294a;--card:#101d33;--tx:#e6eefb;--mu:#9fb0c9;--ac:#8fb4f0;--bd:#22344f;--ok:#9cc8f5;--er:#ff7d8c;--bl:#7db4ff;--gold:#e0344f;--s1:#3a64c4;--s2:#e0344f;--s3:#1d6d9e;--bt:#071730;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1424;--bg2:#10294a;--card:#101d33;--tx:#e6eefb;--mu:#9fb0c9;--ac:#8fb4f0;--bd:#22344f;--ok:#9cc8f5;--er:#ff7d8c;--bl:#7db4ff;--gold:#e0344f;--s1:#3a64c4;--s2:#e0344f;--s3:#1d6d9e;--bt:#071730;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(900px 420px at 0 0,var(--bg2),transparent 70%),var(--bg);color:var(--tx);font:16px/1.5 system-ui,"Noto Sans Bengali","Nirmala UI",sans-serif;min-height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));display:flex;flex-direction:column}
+main{max-width:880px;width:100%;flex:1;margin:0 auto;padding:20px 16px 24px}
+.top{position:relative;overflow:hidden;background:var(--card);border-bottom:4px solid var(--er);box-shadow:0 3px 12px #0b1f4422;padding:18px 16px 14px 172px;min-height:92px;display:flex;flex-direction:column;justify-content:center}
+.brush{position:absolute;left:0;top:0;width:160px;height:90px}
+.ft{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:6px 18px 18px}.cr{color:var(--mu);font-size:.85rem;font-weight:600}.lap{width:78px;height:auto}
+@media(max-width:520px){.top{padding-left:114px;min-height:62px}.brush{width:106px;height:60px}.logo{font-size:1.25rem!important}.lap{width:58px}}
+.logo{font-size:1.7rem;font-weight:800;letter-spacing:.06em;color:var(--ac)}.sub{color:var(--mu);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;margin-top:2px}
+h1,h2{color:var(--ac)}.w-bad{color:var(--er);font-weight:700}.w-unk{color:var(--bl);font-weight:700}
+h1{font-size:1.5rem;margin:.2em 0}h2{font-size:1.15rem;margin:0 0 .6em}
+.card{background:var(--card);border:1px solid var(--bd);border-left:5px solid var(--gold);border-radius:12px;padding:18px;margin:14px 0;box-shadow:0 2px 8px #0001}
+label{display:block;font-weight:600;font-size:.9rem;margin:12px 0 4px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}
+textarea{min-height:160px;resize:vertical}
+button{padding:10px 18px;border:0;border-radius:8px;background:var(--ac);color:var(--bt);font:inherit;font-weight:600;cursor:pointer;margin:2px 0}
+button.g{background:transparent;color:var(--ac);border:1px solid var(--bd)}button.d{background:var(--er)}button:disabled{opacity:.5}
+.row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1 1 140px}.mu{color:var(--mu);font-size:.9rem}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.ref{white-space:pre-wrap;padding:12px;border:1px dashed var(--bd);border-radius:8px;max-height:230px;overflow:auto}
+.nosel,.nosel *{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.nosel textarea{user-select:text;-webkit-user-select:text}
+.bn{font-family:"Noto Sans Bengali","Kalpurush","Nirmala UI",sans-serif;font-size:1.1rem}
+.bc{font-family:"SutonnyMJ","SutonnyOMJ","Sutonny",sans-serif;font-size:1.2rem}
+.timer{font:700 1.6rem ui-monospace,monospace}.timer.low{color:var(--er)}
+.err{color:var(--er);font-weight:600;margin-top:10px}.ok{color:var(--ok)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.stats div{background:var(--bg);border-radius:8px;padding:10px;text-align:center}.stats b{display:block;font-size:1.4rem}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.92rem}td,th{border-bottom:1px solid var(--bd);padding:6px 8px;text-align:left;white-space:nowrap}
+code{background:var(--bg);padding:2px 8px;border-radius:6px;font-weight:700;letter-spacing:.1em}
+#warn{background:var(--er);color:#fff;border-radius:8px;padding:8px 12px;margin:8px 0;display:none}
+</style>
+</head><body><header class="top"><svg class="brush" viewBox="0 0 160 90" aria-hidden="true"><defs><filter id="rg" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".03 .35" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7"/></filter></defs><g fill="none" stroke-linecap="round" filter="url(#rg)"><path d="M-12 16C26 2 66 30 128 10" style="stroke:var(--s1)" stroke-width="22"/><path d="M-12 44C34 28 72 58 112 38" style="stroke:var(--s2)" stroke-width="17"/><path d="M-12 68C24 56 58 80 92 62" style="stroke:var(--s3)" stroke-width="15"/><path d="M4 30C40 22 70 40 104 26" style="stroke:var(--s3)" stroke-width="3" opacity=".6"/><path d="M0 56C36 48 60 64 84 52" style="stroke:var(--s1)" stroke-width="3" opacity=".5"/></g></svg><div class="logo">OC&amp;S Typing Exam</div><div class="sub">Official Online Typing Test</div></header><main id="app"></main><footer class="ft"><span class="cr">©Capt Atkia Mobassira,84 BMA LC, OC&amp;S</span><svg class="lap" viewBox="0 0 96 64" aria-hidden="true"><rect x="14" y="4" width="68" height="44" rx="5" style="fill:var(--s1)"/><rect x="19" y="9" width="58" height="34" rx="2" fill="#dbe9fb"/><rect x="24" y="14" width="30" height="3" rx="1.5" style="fill:var(--s3)"/><rect x="24" y="21" width="44" height="3" rx="1.5" style="fill:var(--s3)"/><rect x="24" y="28" width="36" height="3" rx="1.5" style="fill:var(--s3)"/><rect x="24" y="35" width="14" height="3" rx="1.5" style="fill:var(--s2)"/><path d="M4 52h88l-6 8a4 4 0 0 1-3 2H13a4 4 0 0 1-3-2z" style="fill:var(--s3)"/><rect x="38" y="52" width="20" height="3" rx="1.5" fill="#fff" opacity=".55"/></svg></footer>
+<script>
+/* Storage now lives on this site's own domain (no external database).
+   Exposes window.BACKEND = { init(), ensure(), uid(), login(name, password) }.
+   Everything is saved through /api/store on the same domain:
+   Netlify Function + Netlify Blobs, or server.js + SQLite on any Node host. */
+(function () {
+  const API = "/api/store";
+  let token = "", cid = "";
+  try { cid = localStorage.getItem("octs_cid") || ""; } catch (e) {}
+  if (!/^[a-f0-9]{32}$/.test(cid)) {
+    const a = new Uint8Array(16); crypto.getRandomValues(a);
+    cid = Array.from(a, b => b.toString(16).padStart(2, "0")).join("");
+    try { localStorage.setItem("octs_cid", cid); } catch (e) {}
+  }
+
+  async function call(body) {
+    const h = { "Content-Type": "application/json", "X-Candidate-Id": cid };
+    if (token) h.Authorization = "Bearer " + token;
+    const r = await fetch(API, { method: "POST", headers: h, body: JSON.stringify(body) });
+    let j = null;
+    try { j = await r.json(); } catch (e) {}
+    if (!r.ok || !j) {
+      const e = new Error((j && j.error) || "Storage server is not reachable (HTTP " + r.status + ").");
+      e.code = (j && j.code) || "unavailable";
+      throw e;
+    }
+    return j;
+  }
+
+  const snap = (path, d) => {
+    // the lock's start time is read back as a timestamp object, like before
+    if (d && /^locks\//.test(path) && typeof d.at === "number") { const n = d.at; d = { ...d, at: { toMillis: () => n } }; }
+    return { id: path.split("/")[1], exists: d != null, data: () => d };
+  };
+  const snapDoc = (coll, x) => { const s = snap(coll + "/" + x.id, x.data); return s; };
+
+  function makeDb() {
+    const doc = path => ({
+      get: async () => snap(path, (await call({ action: "get", path })).data),
+      set: async d => { await call({ action: "set", path, data: d }); },
+      delete: async () => { await call({ action: "delete", path }); },
+      // one-time lock: succeeds only if the document does not exist yet
+      acquire: async o => {
+        const j = await call({ action: "acquire", path, holder: String(o.holder), code: String(o.code) });
+        return { acquired: !!j.acquired };
+      }
+    });
+    const coll = (name, q) => {
+      q = q || { where: [], orderBy: null };
+      return {
+        where: (f, op, v) => coll(name, { where: [...q.where, [f, op, v]], orderBy: q.orderBy }),
+        orderBy: (f, d) => coll(name, { where: q.where, orderBy: [f, d || "asc"] }),
+        get: async () => {
+          const j = await call({ action: "query", collection: name, where: q.where, orderBy: q.orderBy });
+          return { empty: j.docs.length === 0, docs: j.docs.map(x => snapDoc(name, x)) };
+        }
+      };
+    };
+    return { doc, collection: n => coll(n) };
+  }
+
+  const downloads = {
+    save: async ({ filename, data }) => {
+      const u = URL.createObjectURL(data), a = document.createElement("a");
+      a.href = u; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(u), 5000);
+    }
+  };
+
+  window.BACKEND = {
+    async init() { return { db: makeDb(), downloads }; },
+    async ensure() {},
+    uid() { return cid; },
+    async login(name, password) {
+      const j = await call({ action: "login", name: name.trim(), password });
+      token = j.token;
+    }
+  };
+})();
+</script>
+<script>
+const $=s=>document.querySelector(s),app=$("#app");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const FONT='"Noto Sans Bengali","Kalpurush","Nirmala UI",system-ui,sans-serif',CFONT='"SutonnyMJ","SutonnyOMJ",sans-serif';
+const CREDIT="©Capt Atkia Mobassira,84 BMA LC, OC&S";
+const DAYS=7,DAY=864e5,LANG={bu:"Bangla (Bijoy Unicode)",bc:"Bangla (Bijoy Classic – SutonnyMJ)",en:"English"};
+let db=null,downloads=null,isAdmin=false,authed=false,timer=null,cleanup=null;
+const norm=s=>String(s).normalize("NFC").replace(/[\u200B-\u200F\u2060\uFEFF]/g,"");
+const words=t=>norm(t).trim().split(/\s+/).filter(Boolean);
+const cls=l=>l==="bc"?"bc":l==="en"?"":"bn";
+const fnt=l=>l==="bc"?CFONT:FONT;
+const modeMsg=l=>l==="bu"?"Your keyboard looks like Bijoy Classic, but this exam needs Bijoy Unicode. Switch your keyboard to Unicode and retype.":l==="bc"?"Your keyboard looks like Unicode, but this exam needs Bijoy Classic. Switch your keyboard to Classic and retype.":"This exam is in English. Switch your keyboard to English.";
+function mism(lang,t){
+  t=String(t||"");const bn=(t.match(/[\u0980-\u09FF]/g)||[]).length,lat=(t.match(/[A-Za-z]/g)||[]).length;
+  if(lang==="bc"||lang==="en")return bn>lat;
+  if(lang==="bu")return lat>bn&&lat>=3;
+  return false;
+}
+const enc=t=>{t=String(t||"");const bn=(t.match(/[\u0980-\u09FF]/g)||[]).length,lat=(t.match(/[A-Za-z]/g)||[]).length;return bn>lat?"bu":lat>0?"bc":""};
+const tmo=(p,ms=8000)=>Promise.race([p,new Promise((_,j)=>setTimeout(()=>j(new Error("timeout")),ms))]);
+function hasFont(n){const c=document.createElement("canvas").getContext("2d"),t="evsjv Avgvi mmmmmm";c.font="40px monospace";const a=c.measureText(t).width;c.font="40px \""+n+"\",monospace";return c.measureText(t).width!==a}
+const hintFor=l=>l==="bc"?"Bijoy Classic (SutonnyMJ): switch to your Bijoy keyboard and type. Font test: <span class='bc' style='font-size:1.3rem'>evsjv</span> should look like Bangla.":l==="bu"?"Bijoy Unicode: type with your Bijoy Unicode keyboard.":"English: type normally.";
+const err=m=>{const e=$("#err");if(e)e.textContent=m};
+const keyOf=(c,r)=>{let n=String(r).trim().toLowerCase().replace(/\s+/g,"").replace(/[০-৯]/g,d=>"০১২৩৪৫৬৭৮৯".indexOf(d));if(/^\d+$/.test(n))n=n.replace(/^0+(?=\d)/,"");return c+"_"+[...n].map(ch=>/[a-z0-9]/.test(ch)?ch:"-"+ch.codePointAt(0).toString(16)).join("")};
+
+/* scoring: a typed word earns a mark if it exactly matches a reference word (spelling + capital/small letters),
+   wherever it is typed. A reference word is used only as many times as it occurs in the paragraph. */
+function grade(ref,typ){
+  const a=words(ref),b=words(typ),m=new Map();
+  a.forEach(w=>m.set(w,(m.get(w)||0)+1));
+  let c=0;b.forEach(w=>{const n=m.get(w)||0;if(n>0){m.set(w,n-1);c++}});
+  return{total:a.length,typed:b.length,correct:c};
+}
+const marksOf=(g,full)=>g.total?Math.round(g.correct/g.total*full*100)/100:0;
+function lev(s,t){s=[...s];t=[...t];let p=Array.from({length:t.length+1},(_,i)=>i);for(let i=1;i<=s.length;i++){const c=[i];for(let j=1;j<=t.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(s[i-1]===t[j-1]?0:1));p=c}return p[t.length]}
+function near(w,a){const n=[...w].length,t=Math.max(1,Math.floor(n/3));for(const x of a)if(Math.abs([...x].length-n)<=t&&lev(w,x)<=t)return true;return false}
+/* colour each typed word: ok = correct (black), bad = wrong word (red), unk = unknown word (blue) */
+function mark(ref,typ){
+  const a=words(ref),b=words(typ),m=new Map();
+  a.forEach(w=>m.set(w,(m.get(w)||0)+1));
+  const set=new Set(a),low=new Set(a.map(x=>x.toLowerCase()));
+  return b.map(w=>{const n=m.get(w)||0;if(n>0){m.set(w,n-1);return{w,c:"ok"}}
+    return{w,c:(set.has(w)||low.has(w.toLowerCase())||near(w,a))?"bad":"unk"}});
+}
+const show=t=>t.length?t.map(x=>x.c==="ok"?esc(x.w):`<span class="w-${x.c}">${esc(x.w)}</span>`).join(" "):"—";
+const LEG=`<p class="mu"><b>Black</b> = correct · <b class="w-bad">Red</b> = wrong word · <b class="w-unk">Blue</b> = unknown word (not in the paragraph)</p>`;
+
+async function saveFile(name,blob){try{if(downloads){await downloads.save({filename:name,data:blob});return true}}catch(e){if(e&&e.code==="declined")return true}return false}
+
+/* ---------- home ---------- */
+function home(){
+  clearInterval(timer);authed=false;
+  app.innerHTML=`<h1>Welcome, candidate</h1><p class="mu">Bangla &amp; English typing tests. Use the exam code given by your examiner.</p>
+  <div class="card"><h2>Candidate</h2><p class="mu">Enter the exam code you received and your roll number.</p>
+  <div class="row"><div><label>Exam code</label><input id="code" autocapitalize="characters" autocomplete="off"></div>
+  <div><label>Roll number</label><input id="roll" autocomplete="off"></div></div>
+  <p><button id="go">Start exam</button></p><div id="err" class="err"></div></div>
+  <div class="card"><div class="bar"><span class="mu">Exam organiser?</span><button class="g" id="adm">Admin login</button></div></div>`;
+  $("#go").onclick=start;$("#adm").onclick=admin;
+}
+
+/* ---------- admin login ---------- */
+async function admin(){
+  const back=`<p><button class="g" id="b">← Back</button></p>`;
+  if(!db){app.innerHTML=back+`<div class="card"><h2>Not connected</h2><p>The database is not set up yet. Please follow README.md.</p></div>`;$("#b").onclick=home;return}
+  if(authed)return panel();
+  app.innerHTML=back+`<div class="card"><h2>Admin login</h2>
+  <label>Admin name</label><input id="an" autocomplete="username"><label>Password</label><input id="ap" type="password" autocomplete="current-password">
+  <p><button id="ok">Log in</button></p><div id="err" class="err"></div></div>`;
+  $("#b").onclick=home;
+  $("#ok").onclick=async()=>{
+    const n=$("#an").value.trim(),p=$("#ap").value;
+    if(!n||!p)return err("Enter name and password.");
+    try{await BACKEND.login(n,p);authed=true;panel()}catch(e){err("Wrong name or password.")}
+  };
+}
+
+/* ---------- admin panel ---------- */
+async function panel(){
+  app.innerHTML=`<div class="bar"><h1>Admin</h1><button class="g" id="b">Log out</button></div>
+  <div class="card"><h2>Create exam</h2>
+  <div class="row"><div><label>Exam name</label><input id="nm" placeholder="Demo"></div>
+  <div><label>Language</label><select id="lg"><option value="bc">${LANG.bc}</option><option value="en">${LANG.en}</option></select></div></div>
+  <div class="row"><div><label>Time (minutes)</label><input id="mn" type="number" min="1" value="10" list="mns"><datalist id="mns"><option>5<option>10<option>20<option>25<option>30</datalist></div>
+  <div><label>Full marks</label><input id="fm" type="number" min="1" value="25" list="fms"><datalist id="fms"><option>25<option>50<option>100</datalist></div></div>
+  <label>Reference paragraph (type, paste or copy freely)</label><textarea id="tx"></textarea><div class="mu" id="wc">0 words</div>
+  <label>Allowed roll numbers (optional)</label><textarea id="al" style="min-height:70px" placeholder="Example: 1, 2, 3 or one per line. Leave empty to allow any roll number."></textarea>
+  <p class="mu" id="hint"></p>
+  <p><button id="mk">Generate exam &amp; code</button></p><div id="err" class="err"></div><div id="new"></div></div>
+  <div class="card"><h2>Your exams</h2><p class="mu">Tap an exam name to see everyone who attended it and download the PDF.</p><div id="list" class="mu">Loading…</div></div><div id="res"></div>`;
+  $("#b").onclick=home;
+  const hint=()=>{const l=$("#lg").value,t=$("#tx");t.className=cls(l);
+    $("#hint").textContent=l==="bc"?"Type or paste Bijoy Classic text (SutonnyMJ), for example straight from your Word file. This box shows it in the SutonnyMJ font.":""};
+  $("#lg").onchange=hint;hint();
+  $("#tx").oninput=e=>$("#wc").textContent=words(e.target.value).length+" words";
+  $("#mk").onclick=create;
+  await purgeOld();list();
+}
+async function create(){
+  const name=$("#nm").value.trim(),text=$("#tx").value.trim(),mins=Math.round(+$("#mn").value),full=+$("#fm").value,lang=$("#lg").value,rolls=$("#al").value.split(/[\s,;]+/).filter(Boolean);
+  if(!name||!text||!(mins>0)||!(full>0))return err("Fill in the name, time, full marks and reference paragraph.");
+  if(mism(lang,text))return err(lang==="bc"?"This paragraph is Unicode Bangla. Please paste Bijoy Classic (SutonnyMJ) text instead.":"This paragraph is Bangla, but the language is English. Choose Bangla (Bijoy Classic).");
+  const A="ABCDEFGHJKMNPQRSTUVWXYZ23456789";let code="";for(let i=0;i<6;i++)code+=A[Math.floor(Math.random()*A.length)];
+  try{await db.doc("exams/"+code).set({name,lang,text,mins,full,allowed:[...new Set(rolls.map(r=>keyOf(code,r)))],at:Date.now()})}catch(e){return err("Could not save: "+(e.message||e.code))}
+  err("");$("#new").innerHTML=`<p class="ok">Exam generated (${LANG[lang]}${rolls.length?", "+rolls.length+" allowed roll numbers":""}). Share this page’s link and the code <code>${code}</code> with candidates.</p>`;list();
+}
+async function purge(code){
+  const s=await db.collection("results").where("code","==",code).get();
+  for(const d of s.docs){await db.doc("locks/"+d.id).delete().catch(()=>{});await db.doc("results/"+d.id).delete().catch(()=>{})}
+  await db.doc("exams/"+code).delete();
+}
+async function purgeOld(){try{const s=await db.collection("exams").get();for(const d of s.docs)if(Date.now()>d.data().at+DAYS*DAY)await purge(d.id)}catch(e){}}
+async function list(){
+  try{const s=await db.collection("exams").orderBy("at","desc").get();
+  $("#list").innerHTML=s.empty?"No exams yet.":`<div class="tbl"><table><tr><th>Exam</th><th>Code</th><th>Language</th><th>Time</th><th>Marks</th><th>Auto-delete</th><th></th></tr>`+
+  s.docs.map(d=>{const x=d.data(),left=Math.max(0,Math.ceil((x.at+DAYS*DAY-Date.now())/DAY));return`<tr><td><button class="g" data-c="${d.id}" title="Open this exam">📁 ${esc(x.name)}</button></td><td><code>${d.id}</code></td><td>${LANG[x.lang]||LANG.bu}</td><td>${x.mins}m</td><td>${x.full}</td><td>in ${left}d</td><td><button class="g" data-c="${d.id}">Results</button> <button class="d" data-x="${d.id}">Delete</button></td></tr>`}).join("")+`</table></div>`;
+  document.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>results(b.dataset.c));
+  document.querySelectorAll("[data-x]").forEach(b=>b.onclick=async()=>{if(confirm("Delete this exam and all its results permanently?")){await purge(b.dataset.x);$("#res").innerHTML="";list()}})}
+  catch(e){$("#list").textContent="Could not load exams."}
+}
+async function results(code){
+  const box=$("#res");box.innerHTML=`<div class="card">Loading…</div>`;
+  try{const ex=(await db.doc("exams/"+code).get()).data();
+  const s=await db.collection("results").where("code","==",code).get();
+  const rows=s.docs.map(d=>{const r=d.data(),g=grade(ex.text,r.text||"");return{...r,total:g.total,typed:g.typed,correct:g.correct,marks:marksOf(g,ex.full),full:ex.full}}).sort((a,b)=>String(a.roll).localeCompare(String(b.roll),undefined,{numeric:true}));
+  const st=r=>r.status==="submitted"?"Submitted":"Not submitted";
+  box.innerHTML=`<div class="card"><div class="bar"><h2>📁 ${esc(ex.name)} · ${code} · ${rows.length} candidate(s)</h2><span><button class="g" id="rf">Refresh</button> <button id="pdf" ${rows.length?"":"disabled"}>Download PDF</button></span></div>
+  <div class="row" style="margin:10px 0"><input id="rr" placeholder="Roll number that needs to try again"><button class="d" id="rz">Reset this roll</button></div>
+  <div class="tbl"><table><tr><th>Roll</th><th>Total words</th><th>Typed</th><th>Correct</th><th>Marks</th><th>Status</th><th>Tab leaves</th><th>Blocked paste/jump</th><th></th></tr>${rows.map((r,i)=>`<tr><td>${esc(r.roll)}</td><td>${r.total}</td><td>${r.typed}</td><td>${r.correct}</td><td>${r.marks} / ${r.full}</td><td>${st(r)}${mism(r.lang,r.text)?" ⚠ wrong keyboard mode":""}</td><td>${r.tabs||0}</td><td>${r.blocked||0}</td><td><button class="g" data-r="${i}">View</button> <button class="d" data-z="${i}">Reset</button></td></tr>`).join("")}</table></div><div id="det"></div></div>`;
+  $("#rf").onclick=()=>results(code);
+  $("#rz").onclick=()=>resetRoll(code,$("#rr").value);
+  document.querySelectorAll("[data-z]").forEach(b=>b.onclick=()=>resetRoll(code,rows[+b.dataset.z].roll));
+  document.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{const r=rows[+b.dataset.r];$("#det").innerHTML=`<h2 style="margin-top:16px">Roll ${esc(r.roll)} — ${r.marks} / ${r.full} marks</h2>${LEG}<div class="ref ${cls(ex.lang)}" style="max-height:none">${show(mark(ex.text,r.text||""))}</div>`;$("#det").scrollIntoView()});
+  $("#pdf").onclick=async()=>{$("#pdf").disabled=true;const b=await makePdf(code,ex.name,rows);if(!await saveFile(code+"_results.pdf",b))alert("Download is not available here.");$("#pdf").disabled=false};
+  box.scrollIntoView()}catch(e){box.innerHTML=`<div class="card err">Could not load results.</div>`}
+}
+async function resetRoll(code,roll){
+  roll=String(roll).trim();if(!roll)return;
+  if(!confirm("Let roll "+roll+" take this exam again? Any saved result for this roll will be deleted."))return;
+  try{const k=keyOf(code,roll);await db.doc("locks/"+k).delete();await db.doc("results/"+k).delete();alert("Done. Roll "+roll+" can start again.");results(code)}
+  catch(e){alert("Could not reset: "+(e.message||e.code))}
+}
+function pdf(jp,W,H){
+  const enc=new TextEncoder(),parts=[],off=[];let len=0;
+  const add=d=>{const u=typeof d==="string"?enc.encode(d):d;parts.push(u);len+=u.length};
+  const obj=(i,f)=>{off[i]=len;add(i+" 0 obj\n");f();add("\nendobj\n")};
+  add("%PDF-1.4\n");obj(1,()=>add("<</Type/Catalog/Pages 2 0 R>>"));
+  obj(2,()=>add("<</Type/Pages/Count "+jp.length+"/Kids["+jp.map((_,i)=>(3+i*3)+" 0 R").join(" ")+"]>>"));
+  jp.forEach((j,i)=>{const p=3+i*3,c="q 595 0 0 842 0 0 cm /I Do Q";
+    obj(p,()=>add(`<</Type/Page/Parent 2 0 R/MediaBox[0 0 595 842]/Resources<</XObject<</I ${p+1} 0 R>>>>/Contents ${p+2} 0 R>>`));
+    obj(p+1,()=>{add(`<</Type/XObject/Subtype/Image/Width ${W}/Height ${H}/ColorSpace/DeviceRGB/BitsPerComponent 8/Filter/DCTDecode/Length ${j.length}>>\nstream\n`);add(j);add("\nendstream")});
+    obj(p+2,()=>add(`<</Length ${c.length}>>\nstream\n${c}\nendstream`))});
+  const n=3+jp.length*3,x=len;add("xref\n0 "+n+"\n0000000000 65535 f \n");
+  for(let i=1;i<n;i++)add(String(off[i]).padStart(10,"0")+" 00000 n \n");
+  add(`trailer\n<</Size ${n}/Root 1 0 R>>\nstartxref\n${x}\n%%EOF`);
+  return new Blob(parts,{type:"application/pdf"});
+}
+async function makePdf(code,name,rows){
+  try{await document.fonts.ready}catch(e){}
+  const W=1240,H=1754,PER=32,pages=Math.max(1,Math.ceil(rows.length/PER)),jp=[],cx=[60,190,360,500,650,830,1000,1120];
+  for(let p=0;p<pages;p++){
+    const c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+    x.fillStyle="#fff";x.fillRect(0,0,W,H);x.fillStyle="#111";x.textBaseline="top";
+    x.font="700 40px "+FONT;x.fillText(name,60,60);
+    x.font="24px "+FONT;x.fillText(`Exam code: ${code}   Candidates: ${rows.length}   Generated: ${new Date().toLocaleString()}   Page ${p+1}/${pages}`,60,120);
+    let y=190;x.font="700 22px "+FONT;["Roll","Total words","Typed","Correct","Marks","Status","Tab leaves","Blocked"].forEach((h,i)=>x.fillText(h,cx[i],y));
+    y+=36;x.fillRect(60,y,W-120,2);y+=14;x.font="22px "+FONT;
+    rows.slice(p*PER,p*PER+PER).forEach(r=>{[String(r.roll),r.total,r.typed,r.correct,r.marks+"/"+r.full,r.status==="submitted"?"Submitted":"Not submitted",r.tabs||0,r.blocked||0].forEach((v,i)=>x.fillText(String(v),cx[i],y));y+=46});
+    x.font="20px "+FONT;x.fillStyle="#555";x.fillText(CREDIT,60,H-38);x.fillStyle="#111";
+    const b=await new Promise(r=>c.toBlob(r,"image/jpeg",.92));jp.push(new Uint8Array(await b.arrayBuffer()));
+  }
+  return pdf(jp,W,H);
+}
+
+/* ---------- candidate ---------- */
+async function start(){
+  const code=$("#code").value.trim().toUpperCase(),roll=$("#roll").value.trim();
+  if(!code||!roll)return err("Enter both the exam code and your roll number.");
+  if(!db)return err("Cannot connect to the server. Check your internet and try again.");
+  $("#go").disabled=true;
+  try{
+    const s=await db.doc("exams/"+code).get(),bad=m=>{$("#go").disabled=false;err(m)};
+    if(!s.exists)return bad("Invalid exam code.");
+    const ex=s.data();if(Date.now()>ex.at+DAYS*DAY)return bad("This exam has expired.");
+    if(mism(ex.lang,ex.text))return bad("This exam was set up with the wrong Bangla type (Unicode/Classic). Please tell your examiner.");
+    const key=keyOf(code,roll);
+    if(ex.allowed&&ex.allowed.length&&!ex.allowed.includes(key))return bad("This roll number is not on the list for this exam.");
+    await BACKEND.ensure();
+    const l=await db.doc("locks/"+key).acquire({holder:roll,code,ttlMs:DAYS*DAY});
+    let resume=null;
+    if(!l.acquired){
+      const lk=(await db.doc("locks/"+key).get()).data();
+      if(!lk||lk.uid!==BACKEND.uid())return bad("This roll number has already been used for this exam.");
+      const left=ex.mins*60000-(Date.now()-lk.at.toMillis());
+      if(left<=0)return bad("Your exam time is over.");
+      const rs=await db.doc("results/"+key).get(),rd=rs.exists?rs.data():{};
+      if(rd.status==="submitted")return bad("You have already submitted this exam.");
+      resume={left,text:rd.text||"",tabs:rd.tabs||0,blocked:rd.blocked||0};
+    }
+    run(code,roll,key,ex,resume);
+  }catch(e){$("#go").disabled=false;err(e&&e.code==="auth/operation-not-allowed"?"Candidate sign-in is not switched on. Please tell your examiner.":e&&e.code==="permission-denied"?"This roll number is not allowed for this exam, or the exam time is over.":"Error: "+(e.message||e.code||e))}
+}
+async function run(code,roll,key,ex,resume){
+  const t0=performance.now(),limit=resume?resume.left:ex.mins*60000,startAt=Date.now()-(ex.mins*60000-limit);let done=false,tabs=resume?resume.tabs:0,blocked=resume?resume.blocked:0,prev="",dirty=true;
+  app.innerHTML=`<div class="card"><div class="bar"><div><h2 style="margin:0">${esc(ex.name)}</h2><span class="mu">Roll ${esc(roll)} · ${ex.full} marks</span></div><div class="timer" id="tm"></div></div></div>
+  <div id="warn"></div><div class="card nosel"><label>Type this paragraph</label><div class="ref ${cls(ex.lang)}" id="ref"></div>
+  <label>Your typing</label><p class="mu">${hintFor(ex.lang)}</p><div id="fchk" class="err"></div><textarea id="ta" class="${cls(ex.lang)}" style="min-height:220px" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" data-gramm="false"></textarea><div id="mm" class="err"></div>
+  <p class="mu">Pasting, copying and leaving this page are blocked or recorded. Your exam is submitted automatically when time ends.</p>
+  <p><button id="fin">Finish &amp; submit</button></p></div>`;
+  $("#ref").textContent=ex.text;const ta=$("#ta");if(resume){ta.value=resume.text;prev=ta.value}ta.focus();
+  if(ex.lang==="bc"&&!hasFont("SutonnyMJ")&&!hasFont("SutonnyOMJ"))$("#fchk").textContent="The SutonnyMJ font was not found on this device, so Bijoy Classic text may look like English letters. Ask your examiner for the font.";
+  try{document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}
+  const snap=st=>{const g=grade(ex.text,ta.value);return{code,roll,total:g.total,typed:g.typed,correct:g.correct,marks:marksOf(g,ex.full),full:ex.full,lang:ex.lang,text:ta.value,status:st,tabs,blocked,at:startAt}};
+  const warn=m=>{const w=$("#warn");w.textContent=m;w.style.display="block";setTimeout(()=>w.style.display="none",4000)};
+  const flag=()=>{blocked++;dirty=true;warn("Pasting, copying and dropping text are not allowed. This was recorded.")};
+  await tmo(db.doc("results/"+key).set(snap("in progress"))).catch(()=>{});
+  if(resume)warn("Welcome back. Your saved typing was restored.");
+  ["paste","drop","cut","copy","contextmenu","dragstart"].forEach(ev=>app.addEventListener(ev,e=>{e.preventDefault();if(ev==="paste"||ev==="drop")flag()}));
+  ta.addEventListener("beforeinput",e=>{if(/paste|drop|yank/i.test(e.inputType||"")){e.preventDefault();flag()}});
+  ta.addEventListener("keydown",e=>{const alt=e.altKey||(e.getModifierState&&e.getModifierState("AltGraph"));if((!alt&&(e.ctrlKey||e.metaKey)&&/^[cvxa]$/i.test(e.key))||(e.shiftKey&&e.key==="Insert")||(!alt&&e.ctrlKey&&e.key==="Insert")){e.preventDefault();flag()}});
+  ta.addEventListener("input",e=>{if(!e.isComposing&&ta.value.length-prev.length>15){ta.value=prev;flag()}else{prev=ta.value;dirty=true}$("#mm").textContent=(ta.value.length>=5&&mism(ex.lang,ta.value))?modeMsg(ex.lang):""});
+  let away=0;const vis=()=>{if(done)return;if(document.hidden){away=Date.now();return}if(away&&Date.now()-away>=3000){tabs++;dirty=true;warn(`You left the exam page (${tabs}/5). The 5th time submits your exam.`);if(tabs>=5)finish()}away=0};
+  document.addEventListener("visibilitychange",vis);
+  const tm=$("#tm"),tick=()=>{const l=Math.max(0,Math.ceil((limit-(performance.now()-t0))/1000));tm.textContent=String(Math.floor(l/60)).padStart(2,"0")+":"+String(l%60).padStart(2,"0");tm.classList.toggle("low",l<=60);if(l<=0)finish()};
+  let saving=setInterval(()=>{if(dirty&&!done){dirty=false;db.doc("results/"+key).set(snap("in progress")).catch(()=>{})}},20000);
+  async function finish(){
+    if(done)return;done=true;clearInterval(timer);clearInterval(saving);document.removeEventListener("visibilitychange",vis);
+    ta.disabled=true;$("#fin").disabled=true;try{document.exitFullscreen&&document.fullscreenElement&&document.exitFullscreen()}catch(e){}
+    const r=snap("submitted");let ok=true;
+    for(let i=0;i<3&&(ok=false)===false;i++){try{await tmo(db.doc("results/"+key).set(r));ok=true;break}catch(e){await new Promise(z=>setTimeout(z,800))}}
+    showResult({...r,ref:ex.text,name:ex.name},ok);
+  }
+  $("#fin").onclick=()=>{if(confirm("Submit your exam now?"))finish()};
+  tick();timer=setInterval(tick,250);
+}
+function showResult(r,saved){
+  app.innerHTML=`<div class="card"><h2>${esc(r.name)} — Result</h2><p class="mu">Roll ${esc(r.roll)}</p>
+  <div class="stats"><div><b>${r.total}</b>Total words</div><div><b>${r.typed}</b>Words typed</div><div><b>${r.correct}</b>Correct words</div><div><b>${r.marks}/${r.full}</b>Marks</div></div>
+  <h2 style="margin-top:16px">Your typed paragraph</h2>${LEG}<div class="ref ${cls(r.lang)}" style="max-height:none">${show(mark(r.ref,r.text||""))}</div>
+  ${(r.correct===0&&r.typed>=3&&mism(r.lang,r.text))?`<p class="err">${modeMsg(r.lang)} (This is why no words matched.)</p>`:""}
+  <p class="${saved?"ok":"err"}">${saved?"Your result has been submitted to the examiner.":"Your result could not be sent to the server. Download your image now and show it to the invigilator."}</p>
+  <p><button id="dl">Download result as image</button> <button class="g" id="hm">Done</button></p><div id="fb"></div></div>`;
+  $("#hm").onclick=home;
+  $("#dl").onclick=async()=>{const b=await png(r);if(!await saveFile("typing-result-"+r.roll+".png",b))$("#fb").innerHTML=`<p class="mu">Press and hold the image below, then choose “Save image”.</p><img style="max-width:100%" src="${URL.createObjectURL(b)}">`};
+}
+function wrapT(c,T,w){const L=[];let l=[],lw=0;for(const t of T){const tw=c.measureText(t.w+" ").width;if(lw+tw>w&&l.length){L.push(l);l=[];lw=0}l.push(t);lw+=tw}if(l.length)L.push(l);return L}
+function wrap(c,t,w){const L=[];let l="";for(const x of words(t)){const n=l?l+" "+x:x;if(c.measureText(n).width>w&&l){L.push(l);l=x}else l=n}if(l)L.push(l);return L}
+async function png(r){
+  const F=fnt(r.lang);try{await document.fonts.load("20px "+F,"অআক")}catch(e){}
+  const W=1000,P=40,LH=32,c=document.createElement("canvas");let x=c.getContext("2d");x.font="20px "+F;
+  const A=wrap(x,r.ref,W-2*P),B=wrapT(x,mark(r.ref,r.text||""),W-2*P);
+  c.width=W;c.height=P*2+470+(A.length+B.length)*LH;x=c.getContext("2d");
+  x.fillStyle="#fff";x.fillRect(0,0,W,c.height);x.fillStyle="#111";x.textBaseline="top";
+  x.fillStyle="#0b1f44";x.fillRect(0,0,W,70);x.fillStyle="#c8102e";x.fillRect(0,70,W,5);x.fillStyle="#fff";x.font="700 32px "+FONT;x.fillText("OC&S Typing Exam",P,16);x.fillStyle="#111";let y=100;x.font="700 26px "+FONT;x.fillText(r.name,P,y);y+=46;x.font="22px "+FONT;
+  [["Roll number",r.roll],["Total words in reference",r.total],["Total words typed",r.typed],["Correct words typed",r.correct],["Total marks",r.marks+" / "+r.full]].forEach(([k,v])=>{x.fillText(k+": "+v,P,y);y+=34});
+  y+=12;x.font="700 22px "+FONT;x.fillText("Reference paragraph",P,y);y+=38;x.font="20px "+F;
+  A.forEach(l=>{x.fillText(l,P,y);y+=LH});y+=26;
+  x.font="700 22px "+FONT;x.fillText("Candidate’s typed paragraph",P,y);y+=34;x.font="16px "+FONT;x.fillStyle="#555";x.fillText("Black = correct    Red = wrong word    Blue = unknown word",P,y);y+=30;x.fillStyle="#111";x.font="20px "+F;
+  B.forEach(l=>{let px=P;l.forEach(t=>{x.fillStyle=t.c==="bad"?"#c62828":t.c==="unk"?"#1565c0":"#111";x.fillText(t.w,px,y);px+=x.measureText(t.w+" ").width});y+=LH});x.fillStyle="#555";x.font="16px "+FONT;x.fillText(CREDIT,P,c.height-40);x.fillStyle="#111";
+  return new Promise(res=>c.toBlob(res,"image/png"));
+}
+
+/* ---------- boot ---------- */
+home();
+(async()=>{try{const b=await BACKEND.init();if(b){db=b.db;downloads=b.downloads}}catch(e){console.error(e)}})();
+</script>
+</body></html>

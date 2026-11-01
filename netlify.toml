@@ -1,0 +1,11 @@
+# Netlify settings.
+# Only index.html is published (server.js, lib/ and the function source are never exposed).
+# The storage endpoint /api/store is the Netlify Function in netlify/functions/store.mjs
+# and keeps all data in Netlify Blobs.
+[build]
+  command = "mkdir -p dist && cp index.html dist/index.html"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
